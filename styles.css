@@ -7,7 +7,7 @@
 .system-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.2rem 0}.system-grid article{display:flex;flex-direction:column;gap:.2rem;border:1px solid var(--line);border-left:5px solid var(--crimson);border-radius:.55rem;padding:1rem;background:var(--paper)}.system-grid span{color:var(--muted)}select{width:100%;max-width:520px;padding:.7rem;border:1px solid #737c86;border-radius:.45rem;background:var(--paper);color:var(--ink)}.journey-output{margin-top:1rem;padding:1rem;border-radius:.6rem;background:var(--soft)}.compact{grid-template-columns:repeat(3,1fr)}.energy-lab label{display:block;margin-top:1rem}.energy-lab input[type="range"]{width:100%}.meter{height:18px;background:#e2e5e9;border-radius:999px;overflow:hidden;margin:1.2rem 0}.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#176b45,#c7a12b,#9e1b32);transition:width .25s}@media(max-width:900px){.system-grid{grid-template-columns:1fr}}
 
 /* Stage 4 instructional enrichment */
-.classroom-guide{margin-block:2rem;padding:1.5rem;border:1px solid #b9c2cb;border-radius:12px;background:var(--surface,#fff)}.classroom-guide li{margin-block:.65rem}.classroom-guide table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}.classroom-guide th,.classroom-guide td{border:1px solid #aab2bb;padding:.65rem;text-align:left}.classroom-guide th{background:#edf0f3;color:#222}input[type="range"]{touch-action:pan-y;cursor:pointer;accent-color:#9e1b32}
+.classroom-guide{margin-block:2rem;padding:1.5rem;border:1px solid #b9c2cb;border-radius:12px;background:var(--surface,#fff)}.classroom-guide li{margin-block:.65rem}.classroom-guide table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}.classroom-guide th,.classroom-guide td{border:1px solid #aab2bb;padding:.65rem;text-align:left}.classroom-guide th{background:#edf0f3;color:#222}input[type="range"]{touch-action:auto;cursor:pointer;accent-color:#9e1b32}
 
 /* Stage 5 responsive lesson tables */
 .lesson-table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}.lesson-table th,.lesson-table td{border:1px solid var(--line);padding:.7rem;text-align:left;vertical-align:top}.lesson-table th{background:var(--soft)}
@@ -23,3 +23,11 @@
 .progress-check-item {display:block;padding:.7rem 0;border-bottom:1px solid #d1d5db;cursor:pointer}
 .progress-check-item input {margin-right:.5rem;accent-color:#8c1d40}
 #personal-checklist {padding:1.25rem;border:1px solid #b6c8d0;border-radius:12px;margin:1.5rem 0}
+
+/* Stage 14: Unit 2 accessible range controls and touch interaction */
+.energy-lab input[type="range"]{display:block;min-width:0;width:100%;height:2.5rem;touch-action:auto;pointer-events:auto;position:relative;z-index:1;accent-color:#9e1b32}
+.slider-step-controls{display:flex;align-items:center;gap:.6rem;margin:.25rem 0 .5rem}
+.slider-step-controls input[type="range"]{flex:1}
+.slider-step{flex:0 0 2.75rem;height:2.75rem;border:2px solid var(--crimson);border-radius:.5rem;background:var(--paper);color:var(--crimson-dark);font-weight:800;cursor:pointer}
+.slider-step:focus-visible,.energy-lab input[type="range"]:focus-visible{outline:3px solid #c7a12b;outline-offset:3px}
+.slider-help{font-size:.9rem;color:var(--muted);margin:.4rem 0}
