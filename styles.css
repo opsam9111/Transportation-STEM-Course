@@ -14,3 +14,12 @@
 
 /* Stage 10: streamlined navigation and onboarding */
 .main-nav{align-items:center;flex-wrap:nowrap}.nav-more{position:relative}.nav-more summary{list-style:none;cursor:pointer;padding:.55rem .7rem;font-weight:650;font-size:.92rem;border-radius:.45rem}.nav-more summary::-webkit-details-marker{display:none}.nav-more summary::after{content:" ▾"}.nav-more[open] summary,.nav-more summary:hover{background:var(--soft)}.nav-more>a{display:block;white-space:nowrap}.nav-more[open]{background:white}.nav-more[open] a{padding:.65rem 1rem}.nav-more[open] {box-shadow:0 8px 20px rgba(0,0,0,.12);border-radius:.5rem}.journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}.journey-step{border:1px solid var(--line);border-radius:1rem;padding:1.25rem;background:white}.journey-number{font-size:1.4rem;font-weight:800;color:var(--crimson)}.journey-step h3{margin:.4rem 0}.journey-step p{font-size:.95rem}.next-step-panel,.enrollment-note{padding:1.25rem;margin:1.5rem auto;background:var(--soft);border-left:5px solid var(--crimson);border-radius:.5rem}.next-step-panel .button{display:inline-block}@media(min-width:901px){.nav-more[open]{position:relative;box-shadow:none}.nav-more[open]>a{position:absolute;right:0;width:225px;background:white;border:1px solid var(--line);z-index:30;box-shadow:0 8px 20px rgba(0,0,0,.1)}.nav-more[open]>a:nth-of-type(1){top:100%}.nav-more[open]>a:nth-of-type(2){top:calc(100% + 44px)}.nav-more[open]>a:nth-of-type(3){top:calc(100% + 88px)}.nav-more[open]>a:nth-of-type(4){top:calc(100% + 132px)}.nav-more[open]>a:nth-of-type(5){top:calc(100% + 176px)}.nav-more[open]>a:nth-of-type(6){top:calc(100% + 220px)}}@media(max-width:900px){.main-nav{flex-wrap:wrap}.nav-more{width:100%}.nav-more[open] a{display:block}.journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.journey-grid{grid-template-columns:1fr}}
+
+/* Stage 11 learner flow */
+#report-completion {margin-top:2.5rem;padding:1.5rem;border:2px solid #b6c8d0;border-radius:14px;background:var(--surface,#f6f9fa)}
+#report-completion .completion-steps {padding-left:1.5rem;line-height:1.75}
+#report-completion .button {display:inline-block;margin:.4rem .7rem .4rem 0}
+#report-completion .completion-note {font-size:.95rem}
+.progress-check-item {display:block;padding:.7rem 0;border-bottom:1px solid #d1d5db;cursor:pointer}
+.progress-check-item input {margin-right:.5rem;accent-color:#8c1d40}
+#personal-checklist {padding:1.25rem;border:1px solid #b6c8d0;border-radius:12px;margin:1.5rem 0}
