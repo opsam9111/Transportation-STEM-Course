@@ -1,0 +1,1 @@
+Restores the Discussion menu, discussion.html with seven prompts, and links from Units 1–7. Removes the Discussion service setup required notice. Preserves compact header layout and Unit 2 slider fix. No live forum or chat backend is connected; prompts and instructor email are usable now. Upload all website files, including discussion.html, replacing matching files.
