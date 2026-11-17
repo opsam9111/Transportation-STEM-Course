@@ -8,3 +8,6 @@
 
 /* Stage 4 instructional enrichment */
 .classroom-guide{margin-block:2rem;padding:1.5rem;border:1px solid #b9c2cb;border-radius:12px;background:var(--surface,#fff)}.classroom-guide li{margin-block:.65rem}.classroom-guide table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}.classroom-guide th,.classroom-guide td{border:1px solid #aab2bb;padding:.65rem;text-align:left}.classroom-guide th{background:#edf0f3;color:#222}input[type="range"]{touch-action:pan-y;cursor:pointer;accent-color:#9e1b32}
+
+/* Stage 5 responsive lesson tables */
+.lesson-table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}.lesson-table th,.lesson-table td{border:1px solid var(--line);padding:.7rem;text-align:left;vertical-align:top}.lesson-table th{background:var(--soft)}
