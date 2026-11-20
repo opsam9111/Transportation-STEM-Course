@@ -115,3 +115,24 @@ body.high-contrast .home-fact-icon {background:#222;color:#ffeb3b}
  .home-art-heading {display:block}
  .home-art-tag {display:block;margin-top:.2rem}
 }
+
+.accessibility-bar {background:#f5f0f1;border-bottom:1px solid #d7cbd0;color:#20242a;position:relative;z-index:21}
+.accessibility-inner {max-width:1600px;margin:auto;display:flex;align-items:center;flex-wrap:wrap;gap:.55rem .85rem;padding:.45rem 1.2rem}
+.accessibility-title {font-weight:800;color:#76172b;margin-right:auto;font-size:.87rem}
+.accessibility-inner label {font-weight:650;font-size:.83rem}
+.accessibility-inner select {font:inherit;font-size:.84rem;border:1px solid #8a8a8a;background:#fff;color:#222;border-radius:.4rem;padding:.32rem .45rem;min-height:38px}
+.accessibility-inner .tool-button {font-size:.83rem;min-height:38px;padding:.35rem .65rem}
+.read-controls {display:inline-flex;flex-wrap:wrap;gap:.3rem}
+.accessibility-inner :focus-visible {outline:3px solid #8c1830;outline-offset:3px}
+.translation-note {max-width:1100px;margin:1rem auto;padding:.55rem 1rem;background:#fff7e3;border-left:4px solid #9e1b32;font-size:.9rem}
+.peer-exchange .activity-panel {max-width:850px}
+.peer-exchange .activity-panel label {display:block;font-weight:750;margin:.8rem 0 .3rem}
+.peer-exchange .activity-panel input[type="text"] {display:block;width:100%;padding:.65rem;border:1px solid #858585;border-radius:.4rem}
+.peer-exchange .activity-panel textarea {min-height:90px}
+.collaboration-steps li {margin:.7rem 0}
+body.high-contrast .accessibility-bar {background:#000;color:#fff;border-color:#fff}
+body.high-contrast .accessibility-title {color:#ffeb3b}
+body.high-contrast .translation-note {background:#000;color:#fff}
+body.low-contrast .accessibility-bar {background:#f1ece6}
+@media(max-width:900px){.accessibility-title {width:100%}.accessibility-inner {gap:.45rem .65rem}}
+@media(max-width:560px){.accessibility-inner {padding:.5rem .8rem}.accessibility-inner label {font-size:.78rem}.accessibility-inner .tool-button {font-size:.78rem}.read-controls {width:100%}.read-controls .tool-button {flex:1}.accessibility-title {margin-right:0}}
