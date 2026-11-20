@@ -4,9 +4,9 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const key="tstem-accessibility-v2";
 let prefs={language:"en",contrast:"normal",large:false};
-try {prefs={...prefs,...JSON.parse(localStorage.getItem(key)||"{}")};}catch{}
+try {prefs={...prefs,...JSON.parse(localStorage.getItem(key)||"{}"),language:"en"};}catch{}
 const labels={
-en:{accessibility:"Accessibility",language:"Interface language",contrast:"Contrast",large:"Larger text",small:"Standard text",read:"Read aloud",pause:"Pause",resume:"Resume",stop:"Stop",home:"Home",start:"Start Here",modules:"Course Modules",resources:"Resources",tools:"Course Tools",discussion:"Discussion",note:"Interface language only; course lessons remain in English."},
+en:{accessibility:"Accessibility",language:"Interface language",contrast:"Contrast",large:"Larger text",small:"Standard text",read:"Read page",pause:"Pause",resume:"Resume",stop:"Stop",home:"Home",start:"Start Here",modules:"Course Modules",resources:"Resources",tools:"Course Tools",discussion:"Discussion",note:"Interface language only; course lessons remain in English."},
 es:{accessibility:"Accesibilidad",language:"Idioma de la interfaz",contrast:"Contraste",large:"Texto más grande",small:"Texto normal",read:"Leer en voz alta",pause:"Pausar",resume:"Reanudar",stop:"Detener",home:"Inicio",start:"Comenzar",modules:"Módulos del curso",resources:"Recursos",tools:"Herramientas del curso",discussion:"Debate",note:"Solo cambia la interfaz; las lecciones siguen en inglés."},
 fr:{accessibility:"Accessibilité",language:"Langue de l’interface",contrast:"Contraste",large:"Agrandir le texte",small:"Texte normal",read:"Lire à voix haute",pause:"Pause",resume:"Reprendre",stop:"Arrêter",home:"Accueil",start:"Commencer",modules:"Modules du cours",resources:"Ressources",tools:"Outils du cours",discussion:"Discussion",note:"Seule l’interface change ; les leçons restent en anglais."}
 };
@@ -14,14 +14,14 @@ let utterance=null, state="stopped";
 function announce(msg){const live=$("#site-live");if(live)live.textContent=msg;}
 function save(){try{localStorage.setItem(key,JSON.stringify(prefs));}catch{}}
 function apply(){
-  document.body.classList.toggle("large-text",prefs.large);
+  document.documentElement.classList.toggle("course-large-text",prefs.large);
   document.body.classList.toggle("high-contrast",prefs.contrast==="high");
   document.body.classList.toggle("low-contrast",prefs.contrast==="soft");
-  const t=labels[prefs.language]||labels.en;
-  document.documentElement.lang="en"; // The substantive instructional content is English.
-  $("#language-select").value=prefs.language;
+  const t=labels.en;
+  document.documentElement.lang="en";
+
   $("#contrast-select").value=prefs.contrast;
-  const map={".accessibility-title":t.accessibility,'label[for="language-select"]':t.language,'label[for="contrast-select"]':t.contrast};
+  const map={".accessibility-title":"Accessibility tools",'label[for="contrast-select"]':"Display"};
   Object.entries(map).forEach(([selector,value])=>{const node=$(selector);if(node)node.textContent=value;});
   const toggle=$("#text-toggle");if(toggle){toggle.textContent=prefs.large?t.small:t.large;toggle.setAttribute("aria-pressed",String(prefs.large));}
   const read=$("#read-toggle");if(read)read.textContent=t.read;
@@ -33,10 +33,9 @@ function apply(){
     $$("a[href]",nav).forEach(a=>{const name=paths[a.getAttribute("href")];if(name)a.textContent=t[name];});
     const summary=$("details.nav-more > summary");if(summary)summary.textContent=t.tools;
   }
-  const note=$(".translation-note");if(note)note.textContent=t.note;
+
 }
 function stop(){if("speechSynthesis" in window)window.speechSynthesis.cancel();utterance=null;state="stopped";apply();}
-$("#language-select")?.addEventListener("change",e=>{prefs.language=e.target.value;save();stop();apply();announce(labels[prefs.language].note);});
 $("#contrast-select")?.addEventListener("change",e=>{prefs.contrast=e.target.value;save();apply();announce("Contrast updated");});
 $("#text-toggle")?.addEventListener("click",()=>{prefs.large=!prefs.large;save();apply();});
 $("#read-toggle")?.addEventListener("click",()=>{

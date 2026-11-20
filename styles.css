@@ -136,3 +136,25 @@ body.high-contrast .translation-note {background:#000;color:#fff}
 body.low-contrast .accessibility-bar {background:#f1ece6}
 @media(max-width:900px){.accessibility-title {width:100%}.accessibility-inner {gap:.45rem .65rem}}
 @media(max-width:560px){.accessibility-inner {padding:.5rem .8rem}.accessibility-inner label {font-size:.78rem}.accessibility-inner .tool-button {font-size:.78rem}.read-controls {width:100%}.read-controls .tool-button {flex:1}.accessibility-title {margin-right:0}}
+
+/* Polished, single-row accessibility toolbar, matching the portfolio layout. */
+.accessibility-bar{background:#262626;color:#fff;border-bottom:0}
+.accessibility-inner{max-width:1480px;min-height:66px;padding:10px 18px;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px 13px}
+.accessibility-title{color:#fff;font-weight:750;font-size:14px;line-height:1.3;margin-right:auto;white-space:nowrap}
+.accessibility-inner label{color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
+.accessibility-inner select{width:auto;min-width:155px;max-width:210px;flex:0 0 auto;background:#fff;color:#111;font-size:14px;min-height:40px;border-radius:0;padding:7px 12px}
+.accessibility-inner .tool-button{font-size:14px;font-weight:600;line-height:1.2;min-height:40px;padding:9px 12px;border-radius:0;background:#fff;color:#171717;border:1px solid #d5d5d5;white-space:nowrap}
+.accessibility-inner .tool-button:hover,.accessibility-inner .tool-button:focus-visible{background:#f4e7ea;border-color:#a5243d}
+.read-controls{display:inline-flex;align-items:center;gap:6px;flex-wrap:nowrap}
+.accessibility-inner #pause-read,.accessibility-inner #stop-read{background:#d6d6d6}
+.accessibility-inner :focus-visible{outline:3px solid #f6d75d;outline-offset:2px}
+.ai-assistance-disclosure{max-width:1180px;margin:1.25rem auto 0;padding:0 1.25rem;color:#e2e5e8;font-size:.77rem;line-height:1.5;text-align:center}
+html.course-large-text{font-size:112.5%}
+html.course-large-text body{font-size:1.12rem}
+html.course-large-text .content p,html.course-large-text .content li,html.course-large-text main .card p,html.course-large-text main .journey-step p{font-size:1.12rem;line-height:1.75}
+html.course-large-text .main-nav a,html.course-large-text .main-nav summary,html.course-large-text .side-nav a{font-size:1.03rem}
+html.course-large-text .home-hero .home-hero-lead{font-size:1.24rem}
+html.course-large-text .accessibility-inner{font-size:14px}
+@media(max-width:1100px){.accessibility-inner{justify-content:center}.accessibility-title{margin-right:16px}}
+@media(max-width:750px){.accessibility-inner{justify-content:flex-start;gap:7px 9px;padding:9px 12px}.accessibility-title{width:100%;margin:0}.read-controls{width:auto;flex-wrap:wrap}.accessibility-inner select{min-width:135px}.accessibility-inner .tool-button{font-size:13px;padding:8px 9px}}
+@media(max-width:480px){.accessibility-inner label{font-size:13px}.accessibility-inner select{min-width:125px;max-width:165px}.read-controls{width:100%;display:flex}.read-controls .tool-button{flex:1}}
